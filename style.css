@@ -70,13 +70,14 @@ footer .instagram:hover {
 
 /* Estilo para el contenedor del video */
 main {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    height: 100vh;
+    /* Ocupa toda la altura de la ventana */
     position: relative;
-    overflow: hidden;
-    /* Asegura que el video no sobresalga de los límites de main */
-    width: 100%;
-    /* Ocupa todo el ancho del contenedor */
-    height: auto;
-    /* Ajusta su altura automáticamente */
 }
 
 main video {
@@ -106,4 +107,19 @@ main video {
     /* Escala según el contenedor */
     height: 80%;
     /* Mantiene las proporciones */
+}
+
+/* Estilos adicionales para dispositivos pequeños */
+@media (max-width: 767px) {
+    .responsive-img {
+        width: 80%;
+        /* La imagen ocupará el 80% del ancho en pantallas pequeñas */
+        height: auto;
+        /* Mantiene las proporciones de la imagen */
+    }
+
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
