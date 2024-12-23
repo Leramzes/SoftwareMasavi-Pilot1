@@ -6,7 +6,7 @@
 
 /* Centra vertical y horizontalmente el formulario */
 .login-container {
-    width: 75%;
+    width: 100%;
     max-width: 400px;
     background-color: #ffffff;
     padding: 2rem;

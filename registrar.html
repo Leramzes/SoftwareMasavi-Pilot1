@@ -45,7 +45,7 @@
                             <a class="nav-link" href="#">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Productos</a>
+                            <a class="nav-link" href="product.html">Productos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contactanos.html">Contáctanos</a>
@@ -61,42 +61,50 @@
 
     <main class="container-fluid bg-main">
         <div class="row w-100 d-flex justify-content-center align-items-center">
-            <div class="col-6 d-flex flex-column text-center text-light align-items-center">
+            <div class="col-12 col-md-6 d-flex flex-column text-center text-light align-items-center">
                 <h1>Lorem ipsum dolor sit amet</h1>
                 <h5>Lorem ipsum dolor sit amet consectetur.</h5>
             </div>
-            <div class="col-6 d-flex p-4 justify-content-center align-items-center">
+            <div class="col-12 col-md-6 d-flex p-4 justify-content-center align-items-center">
                 <div class="w-75 p-4 bg-light rounded shadow">
                     <h2 class="text-center mb-4">Crear Cuenta</h2>
                     <form id="register-form">
+                        <!-- Campo de correo electrónico -->
                         <div class="mb-3">
                             <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico" required>
+                            <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico"
+                                required>
                             <div id="email-error" class="text-danger mt-1" style="display: none;">
                                 El correo debe ser de Gmail o Hotmail y tener un formato válido.
                             </div>
                         </div>
-                    
+    
+                        <!-- Campo de nombre de usuario -->
                         <div class="mb-3">
                             <label for="username" class="form-label">Nombre de Usuario</label>
-                            <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre de usuario" required>
+                            <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre de usuario"
+                                required>
                             <div id="username-error" class="text-danger mt-1" style="display: none;">
                                 El nombre de usuario ya existe.
                             </div>
                         </div>
-                    
-                        <div class="mb-3">
+    
+                        <!-- Campo de contraseña -->
+                        <div class="mb-3 position-relative">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+                            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña"
+                                required>
                             <i id="toggle-password" class="fa fa-eye"></i>
                         </div>
-                    
-                        <div class="mb-3">
+    
+                        <!-- Campo de confirmación de contraseña -->
+                        <div class="mb-3 position-relative">
                             <label for="confirm-password" class="form-label">Confirmar Contraseña</label>
-                            <input type="password" class="form-control" id="confirm-password" placeholder="Confirme su contraseña" required>
+                            <input type="password" class="form-control" id="confirm-password"
+                                placeholder="Confirme su contraseña" required>
                             <i id="toggle-confirm-password" class="fa fa-eye"></i>
                         </div>
-
+    
                         <button type="submit" class="btn btn-success w-100">Registrar</button>
                         <p class="text-center mt-3 mb-0">
                             ¿Ya tiene cuenta? <a href="login.html" class="text-black">Inicie sesión</a>

@@ -1,5 +1,3 @@
-/* home.css */
-
 /* Estilo para el contenedor del video en la página principal */
 main {
     display: flex;
@@ -29,14 +27,14 @@ main video {
 
 /* Estilos específicos de imágenes */
 .responsive-img {
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: auto; /* Para mantener la proporción de la imagen */
 }
 
 /* Estilos generales para dispositivos pequeños */
 @media (max-width: 767px) {
     .responsive-img {
-        width: 80%;
+        width: 100%;
         height: auto;
     }
 
@@ -44,4 +42,15 @@ main video {
         padding-top: 20px;
         padding-bottom: 20px;
     }
+}
+
+body,
+html {
+    overflow-x: hidden;
+    /* Eliminar desbordamiento horizontal */
+}
+
+main {
+    overflow: hidden;
+    /* Evitar desbordamiento dentro de main */
 }
