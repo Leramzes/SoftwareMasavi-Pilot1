@@ -20,29 +20,29 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg" style="background-color: #8d8d8d;">
+        <nav class="navbar navbar-expand-lg fixed-top px-lg-5 px-md-5 px-sm-5">
             <div class="container-fluid">
                 <!-- Logo alineado a la izquierda -->
                 <a class="navbar-brand" href="index.html">
-                    <img src="Img/logo.jpg" width="50" height="50" class="rounded-circle mx-3">
+                    <img src="Img/logo.jpg" class="rounded-circle" alt="Masavi">
                 </a>
-
+    
                 <!-- Botón de colapso para pantallas pequeñas -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+    
                 <!-- Contenido de la barra de navegación -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <!-- Menú de navegación -->
-                    <ul class="navbar-nav mb-2 mb-lg-0 align-items-end">
+                    <ul class="navbar-nav align-items-end">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                            <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Nosotros</a>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="about_us.html">Nosotros</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="product.html">Productos</a>
@@ -55,9 +55,11 @@
                                 Carrito</a>
                         </li>
                     </ul>
-
+    
                     <!-- Botón de iniciar sesión alineado a la derecha -->
-                    <a href="login.html" class="btn rounded-pill border">Iniciar Sesión</a>
+                    <div class="d-flex justify-content-end">
+                        <a href="login.html" class="btn rounded-pill border">Iniciar Sesión</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -161,55 +163,38 @@
             <div class="row">
                 <!-- Sidebar de filtros -->
                 <div class="col-md-3">
-                    <div class="sidebar">
+                    <div class="sidebar border rounded p-3 shadow-sm">
                         <h5><i class="fa-solid fa-filter"></i> Filtros:</h5>
 
                         <!-- Filtro por nombre -->
                          <div class="filter-group">
-                            <label for="proveedor-search">Nombre:</label>
+                            <label for="nombre-search">Nombre del producto:</label>
                             <input type="text" id="nombre-search" class="form-control" placeholder="Buscar producto...">
                          </div>
 
-                        <!-- Filtro por proveedor -->
+                        <!-- Filtro por categoría -->
                         <div class="filter-group">
-                            <label for="proveedor-search">Proveedor:</label>
-                            <input type="text" id="proveedor-search" class="form-control" placeholder="Buscar proveedor...">
-                            <button class="btn btn-link w-100" type="button" data-bs-toggle="collapse" data-bs-target="#proveedor-list"
-                                aria-expanded="false" aria-controls="proveedor-list">
-                                Mostrar Opciones
-                            </button>
-                            <ul id="proveedor-list" class="list-unstyled collapse">
-                                <li><input type="checkbox"> Proveedor 1</li>
-                                <li><input type="checkbox"> Proveedor 2</li>
-                                <li><input type="checkbox"> Proveedor 3</li>
-                                <li><input type="checkbox"> Proveedor 4</li>
-                            </ul>
+                            <label for="categoria-select" class="form-label">Categoría:</label>
+                            <select id="categoria-select" class="form-select">
+                                <option value="">Seleccionar categoría</option>
+                                <option value="electronica">Electrónica</option>
+                                <option value="ropa">Ropa</option>
+                                <option value="hogar">Hogar</option>
+                                <option value="juguetes">Juguetes</option>
+                            </select>
                         </div>
-                        
-                        <!-- Filtro por marca -->
-                        <div class="filter-group">
-                            <label for="marca-search">Marca:</label>
-                            <input type="text" id="marca-search" class="form-control" placeholder="Buscar marca...">
-                            <button class="btn btn-link w-100" type="button" data-bs-toggle="collapse" data-bs-target="#marca-list"
-                                aria-expanded="false" aria-controls="marca-list">
-                                Mostrar Opciones
-                            </button>
-                            <ul id="marca-list" class="list-unstyled collapse">
-                                <li><input type="checkbox"> Marca 1</li>
-                                <li><input type="checkbox"> Marca 2</li>
-                                <li><input type="checkbox"> Marca 3</li>
-                                <li><input type="checkbox"> Marca 4</li>
-                            </ul>
-                        </div>
-                        
+                                                               
                         <!-- Filtro por rango de precio -->
                         <div class="filter-group">
-                            <label for="price-range">Rango de precio:</label>
-                            <input type="range" id="price-range" class="form-control" min="0" max="1000" step="10">
-                            <span id="price-value">0 - 1000</span>
+                            <label for="price-range" class="form-label">Rango de precio:</label>
+                            <input type="range" id="price-range" class="form-range" min="0" max="1000" step="10">
+                            <div class="d-flex justify-content-between">
+                                <span id="price-min" class="text-muted">$0</span>
+                                <span id="price-max" class="text-muted">$1000</span>
+                            </div>
                         </div>
                         
-                        <button class="btn btn-secondary w-100">Aplicar Filtros</button>
+                        <button class="btn btn-success w-100">Aplicar Filtros</button>
                     </div>
                 </div>
             
@@ -218,17 +203,19 @@
                     <div class="row row-cols-1 row-cols-md-3 gy-2">
                         <!-- Tarjeta de producto -->
                         <div class="col">
-                            <div class="product-card product-item">
-                                    <img src="Img/producto.jpg" alt="Producto" class="product">
+                            <div class="product-card d-flex flex-column justify-content-between align-items-center">
+                                <img src="Img/producto.jpg" alt="Producto">
+                                <div class="product-info">
                                     <h2>Waifu</h2>
                                     <h4>Precio Actual: S/99.99</h4>
-                                    <h5 class="tachado">Precio Anterior: S/100</h5>
-                                    <p>Lleve su Waifu a buen precio</p>
-                                    <button type="button" class="btn btn-success w-100">
-                                        Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i>
-                                    </button>
+                                    <p class="product-description">Lleve su Waifu a buen precio</p>
+                                </div>
+                                <button type="button" class="btn btn-success w-100">
+                                    Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
                             </div>
                         </div>
+
             
                         <!-- Copiar esta estructura para más productos -->
                         <div class="col">
@@ -263,7 +250,7 @@
     </main>
 
 
-    <footer class="bg-dark text-white py-2">
+    <footer class="background-footer text-white py-2">
         <div class="container">
             <!-- Fila de redes sociales -->
             <div class="row justify-content-center">
@@ -272,7 +259,7 @@
                 </div>
                 <div class="col-auto">
                     <a href="https://facebook.com" target="_blank" class="text-white">
-                        <i class="facebook fab fa-facebook-f"></i> <!-- Ícono de Facebook -->
+                        <i class="facebook fab fa-brands fa-facebook"></i> <!-- Ícono de Facebook -->
                     </a>
                 </div>
                 <div class="col-auto">
@@ -281,7 +268,7 @@
                     </a>
                 </div>
             </div>
-
+    
             <!-- Fila de Copyright -->
             <div class="row">
                 <div class="col text-center">

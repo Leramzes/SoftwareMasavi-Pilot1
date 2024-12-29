@@ -19,7 +19,6 @@
 
 /* Para asegurar que todo el formulario se vea bien */
 #register-form {
-    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f8f9fa;
@@ -32,8 +31,3 @@
     font-size: 0.9rem;
 }
 
-/* Estilo para el botón */
-.btn:hover {
-    background-color: #508E9C;
-    color: white;
-}

@@ -20,11 +20,11 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg" style="background-color: #8d8d8d;">
+        <nav class="navbar navbar-expand-lg fixed-top px-lg-5 px-md-5 px-sm-5">
             <div class="container-fluid">
                 <!-- Logo alineado a la izquierda -->
                 <a class="navbar-brand" href="index.html">
-                    <img src="Img/logo.jpg" width="50" height="50" class="rounded-circle mx-3">
+                    <img src="Img/logo.jpg" class="rounded-circle" alt="Masavi">
                 </a>
 
                 <!-- Botón de colapso para pantallas pequeñas -->
@@ -37,12 +37,12 @@
                 <!-- Contenido de la barra de navegación -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <!-- Menú de navegación -->
-                    <ul class="navbar-nav mb-2 mb-lg-0 align-items-end">
+                    <ul class="navbar-nav align-items-end">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                            <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact_us.html">Nosotros</a>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="about_us.html">Nosotros</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="product.html">Productos</a>
@@ -57,7 +57,9 @@
                     </ul>
 
                     <!-- Botón de iniciar sesión alineado a la derecha -->
-                    <a href="login.html" class="btn rounded-pill border">Iniciar Sesión</a>
+                    <div class="d-flex justify-content-end">
+                        <a href="login.html" class="btn rounded-pill border">Iniciar Sesión</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -71,10 +73,18 @@
                     <!-- Texto a la izquierda -->
                     <div class="col-12 col-md-8">
                         <h1 class="text-black fw-bold">Historia</h1>
-                        <p class="text-muted">
-                            Lorem ipsum dolor sit amet consectetur. Ornare purus amet rhoncus suspendisse ipsum ullamcorper
-                            vulputate euismod quis. In egestas risus id porta sed at leo convallis. Habitant faucibus nisl nunc
-                            arcu id nibh velit. A nunc at odio nisi volutpat augue orci.
+                        <p class="text-muted text-justify" style="text-align: justify;">
+                            En 2011 el <strong>Centro Agronómico MASAVI</strong> inicia con la venta de productos agroquímicos como un negocio
+                            de persona natural.
+                            A partir de ese año se logró adentrarse un poco más en el mercado agropecuario y agronómico obteniendo productos de
+                            <strong>buena calidad</strong> para la satisfacción del cliente según sus necesidades. En el año 2020, el
+                            <strong>Centro Agronómico MASAVI</strong> decide no solo dedicarse a la venta de sus productos, sino también brindar
+                            soluciones
+                            a los clientes dándoles <strong>asesoría</strong> de acuerdo a sus problemas y a su vez guiándolos en la utilización
+                            del producto para mejores resultados.
+                            Tenemos la suficiente experiencia para que nuestros clientes tengan la <strong>confianza</strong> de adquirir
+                            nuestros productos y que sus
+                            <strong>necesidades</strong> puedan ser resueltas.
                         </p>
                     </div>
                     <!-- Imagen a la derecha -->
@@ -99,9 +109,8 @@
                                 <i class="fa-regular fa-handshake fa-3x text-primary"></i>
                             </div>
                             <h5 class="fw-bold text-dark">Misión</h5>
-                            <p class="text-muted">
-                                Lorem ipsum dolor sit amet consectetur. Venenatis nibh non arcu in sit id tincidunt nibh.
-                                Donec diam velit quis quam sagittis viverra fermentum.
+                            <p class="text-muted" style="text-align: justify;">
+                                Ser una empresa líder en la venta de productos agroquímicos de alta calidad, ofreciendo soluciones efectivas y personalizadas que satisfagan las necesidades de nuestros clientes, promoviendo un desarrollo agrícola eficiente y sostenible.
                             </p>
                         </div>
                     </div>
@@ -112,9 +121,9 @@
                                 <i class="fa-regular fa-eye fa-3x text-success"></i>
                             </div>
                             <h5 class="fw-bold text-dark">Visión</h5>
-                            <p class="text-muted">
-                                Lorem ipsum dolor sit amet consectetur. Venenatis nibh non arcu in sit id tincidunt nibh.
-                                Donec diam velit quis quam sagittis viverra fermentum.
+                            <p class="text-muted" style="text-align: justify;">
+                                Convertirnos en el principal referente de confianza y asesoría en el sector agroquímico, garantizando a nuestros clientes productos de calidad superior y servicios que impulsen el crecimiento sostenible de sus cultivos y el éxito de sus
+                                proyectos agrícolas.
                             </p>
                         </div>
                     </div>
@@ -125,26 +134,34 @@
                                 <i class="fa-regular fa-star fa-3x text-warning"></i>
                             </div>
                             <h5 class="fw-bold text-dark">Valores</h5>
-                            <p class="text-muted">
-                                Lorem ipsum dolor sit amet consectetur. Venenatis nibh non arcu in sit id tincidunt nibh.
-                                Donec diam velit quis quam sagittis viverra fermentum.
+                            <p class="text-muted" style="text-align: justify;">
+                                Nos regimos por principios fundamentales que reflejan nuestro compromiso con el sector agronómico:
                             </p>
+                            <ul class="text-muted ps-3" style="list-style-type: none;">
+                                <li>Calidad</li>
+                                <li>Confianza</li>
+                                <li>Sostenibilidad</li>
+                                <li>Innovación</li>
+                                <li>Responsabilidad</li>
+                                <li>Compromiso con el cliente</li>
+                                <li>Educación y asesoramiento</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-    
             <!-- Sección Ubicación -->
-            <div class="card bg-light p-4 rounded text-center">
-                <h1 class="text-black fw-bold">
+            <div class="card bg-light p-4 rounded ">
+                <h1 class="text-black fw-bold mb-4 text-center">
                     ¿Dónde nos Ubicamos?
                 </h1>
-                <div class="bg-secondary rounded overflow-hidden" style="height: 300px;">
+                <div class="map-container rounded overflow-hidden" style="height: 300px;">
                     <!-- Google Maps Embed -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.5618605599634!2d-79.90455012538204!3d-6.701057493294512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904ced9729b17ded%3A0x8434a259867eade!2sAv.%20Mariscal%20Ramon%20Castilla%20487%2C%20Lambayeque%2014013!5e0!3m2!1ses-419!2spe!4v1735012991853!5m2!1ses-419!2spe"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -153,7 +170,7 @@
 
 
 
-    <footer class="bg-dark text-white py-2">
+    <footer class="background-footer text-white py-2">
         <div class="container">
             <!-- Fila de redes sociales -->
             <div class="row justify-content-center">
@@ -162,7 +179,7 @@
                 </div>
                 <div class="col-auto">
                     <a href="https://facebook.com" target="_blank" class="text-white">
-                        <i class="facebook fab fa-facebook-f"></i> <!-- Ícono de Facebook -->
+                        <i class="facebook fab fa-brands fa-facebook"></i> <!-- Ícono de Facebook -->
                     </a>
                 </div>
                 <div class="col-auto">
@@ -171,7 +188,7 @@
                     </a>
                 </div>
             </div>
-
+    
             <!-- Fila de Copyright -->
             <div class="row">
                 <div class="col text-center">

@@ -42,62 +42,10 @@ h1{
     font-size: 80px;
 }
 
-.tachado {
-    text-decoration: line-through;
-    /* Aplica el tachado */
-    color: red;
-    /* Cambia el color a rojo */
-}
-
 .sidebar {
     background-color: #f5f5f5;
     padding: 15px;
     border-radius: 10px;
-}
-
-.product-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-}
-
-.product-card img {
-    border-radius: 10px;
-    max-width: 150px;
-    height: 150px;
-}
-
-.product-card button {
-    margin-top: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.product-card button:hover {
-    background-color: #4CAF50;
-    /* Cambia a un verde más vibrante */
-    transform: scale(1.05);
-    /* Efecto de aumento al pasar el ratón */
-}
-
-.product-item {
-    background-color: #343a40;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    color: white;
-}
-
-.product {
-    width: 150px;
-    /* Ancho fijo */
-    height: 150px;
-    /* Alto fijo */
-    object-fit: cover;
-    /* Ajusta la imagen sin deformarla */
-    border-radius: 8px;
-    /* Opcional: bordes redondeados */
-    border: 1px solid #ddd;
-    /* Opcional: borde para estilizar */
 }
 
 .filter-group {
@@ -112,4 +60,52 @@ h1{
     display: block;
     text-align: center;
     margin-top: 0.5rem;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    height: 100%;
+    background-color: #343a40;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Espacio entre los elementos principales */
+    align-items: center;
+}
+
+.product-card img {
+    width: 150px;
+    height: 150px; 
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Información del producto */
+.product-info {
+    flex-grow: 1;
+    /* Toma el espacio restante en la tarjeta */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centra verticalmente los textos */
+    align-items: center;
+    /* Centra horizontalmente los textos */
+    min-height: 120px;
+    /* Garantiza que tenga una altura mínima */
+}
+
+.product-card button {
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-card button:hover {
+    background-color: #4CAF50;
+    transform: scale(1.05);
 }
