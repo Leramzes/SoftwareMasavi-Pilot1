@@ -24,7 +24,7 @@
             <div class="container-fluid">
                 <!-- Logo alineado a la izquierda -->
                 <a class="navbar-brand" href="index.html">
-                    <img src="Img/logo.jpg" class="rounded-circle" alt="Masavi">
+                    <img src="Img/logo.jpg" class="rounded-circle">
                 </a>
     
                 <!-- Botón de colapso para pantallas pequeñas -->
@@ -67,7 +67,7 @@
 
     <main class="bg-main">
         <div class="container py-4">
-            <div class="row text-center text-white">
+            <div class="row mb-3 text-center text-primary-emphasis">
                 <h1>Productos Destacados</h1>
             </div>
             <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -89,7 +89,7 @@
                             </div>
         
                             <!-- Columna derecha -->
-                            <div class="col-auto text-center text-white mx-5 carousel">
+                            <div class="col-auto text-center mx-5 carousel">
                                 <h1>Waifu</h1>
                                 <h3>Precio Actual: S/99.99</h3>
                                 <h5 class="tachado">Precio Anterior: S/100</h5>
@@ -145,24 +145,28 @@
         
                 <!-- Controles -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span aria-hidden="true">
+                        <i class="fas fa-chevron-left" style="color: black; font-size: 1.5rem;"></i>
+                    </span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span aria-hidden="true">
+                        <i class="fas fa-chevron-right" style="color: black; font-size: 1.5rem;"></i>
+                    </span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div> 
         </div>
 
         <div class="container-fluid my-2">
-            <div class="row text-center text-white">
+            <div class="row mb-3 text-center text-primary-emphasis">
                 <h1>¿Que estas buscando hoy?</h1>
             </div>
 
             <div class="row">
                 <!-- Sidebar de filtros -->
-                <div class="col-md-3">
+                <div class="col-md-3 mb-4">
                     <div class="sidebar border rounded p-3 shadow-sm">
                         <h5><i class="fa-solid fa-filter"></i> Filtros:</h5>
 
@@ -199,15 +203,15 @@
                 </div>
             
                 <!-- Zona principal de productos -->
-                <div class="col-md-9">
+                <div class="col-md-9 mb-4">
                     <div class="row row-cols-1 row-cols-md-3 gy-2">
                         <!-- Tarjeta de producto -->
                         <div class="col">
                             <div class="product-card d-flex flex-column justify-content-between align-items-center">
                                 <img src="Img/producto.jpg" alt="Producto">
                                 <div class="product-info">
-                                    <h2>Waifu</h2>
-                                    <h4>Precio Actual: S/99.99</h4>
+                                    <h2 class="product-title">Waifu</h2>
+                                    <h4 class="product-price">Precio Actual: S/99.99</h4>
                                     <p class="product-description">Lleve su Waifu a buen precio</p>
                                 </div>
                                 <button type="button" class="btn btn-success w-100">

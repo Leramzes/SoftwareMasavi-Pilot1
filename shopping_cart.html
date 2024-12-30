@@ -11,7 +11,7 @@
     <!--Enlace de CSS Global-->
     <link rel="stylesheet" href="css/global.css">
     <!--Enlace de CSS Específico-->
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/shopping_cart.css">
     <!--Enlace de CSS Fondo-->
     <link rel="stylesheet" href="css/background.css">
     <!-- FontAwesome CDN -->
@@ -20,29 +20,29 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg" style="background-color: #8d8d8d;">
+        <nav class="navbar navbar-expand-lg fixed-top px-lg-5 px-md-5 px-sm-5">
             <div class="container-fluid">
                 <!-- Logo alineado a la izquierda -->
                 <a class="navbar-brand" href="index.html">
-                    <img src="Img/logo.jpg" width="50" height="50" class="rounded-circle mx-3">
+                    <img src="Img/logo.jpg" class="rounded-circle">
                 </a>
-
+    
                 <!-- Botón de colapso para pantallas pequeñas -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+    
                 <!-- Contenido de la barra de navegación -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <!-- Menú de navegación -->
-                    <ul class="navbar-nav mb-2 mb-lg-0 align-items-end">
+                    <ul class="navbar-nav align-items-end">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                            <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact_us.html">Nosotros</a>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="about_us.html">Nosotros</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="product.html">Productos</a>
@@ -55,9 +55,11 @@
                                 Carrito</a>
                         </li>
                     </ul>
-
+    
                     <!-- Botón de iniciar sesión alineado a la derecha -->
-                    <a href="login.html" class="btn rounded-pill border">Iniciar Sesión</a>
+                    <div class="d-flex justify-content-end">
+                        <a href="login.html" class="btn rounded-pill border">Iniciar Sesión</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -67,78 +69,66 @@
         <div class="container-fluid my-2">
             <div class="row">
                 <!-- Carrito de Compra -->
-                <div class="col-12 col-md-8">
-                    <h1 class="text-black fw-bold">Carrito de Compra</h1>
-                    <div class="card p-3 rounded ">
+                <div class="col-12 col-md-8 mb-4">
+                    <h1 class="fw-bold text-primary-emphasis mb-4">Carrito de Compra:</h1>
+                    <div class="card p-3">
                         <!-- Producto 1 -->
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="me-3">
-                                <div class="bg-secondary rounded" >
-                                    <img src="Img/producto.jpg" style="width: 80px; height: 80px;" alt="producto 1">
-                                </div>
-                            </div>
-                            <div class="flex-grow-1">
-                                <h5 class="text-black fw-bold">Producto</h5>
-                                <p class="text-muted mb-0">Lorem ipsum dolor sit amet consectetur.</p>
+                        <div class="product-item d-flex align-items-center">
+                            <img src="Img/producto.jpg" alt="Producto 1">
+                            <div class="flex-grow-1 px-3">
+                                <h5 class="fw-bold text-dark">Producto</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur.</p>
                             </div>
                             <div class="text-end me-3">
-                                <p class="text-black fw-bold mb-0">Precio Actual: S/69</p>
-                                <p class="text-muted text-decoration-line-through">Precio Anterior: S/70</p>
+                                <p class="fw-bold text-dark mb-0">S/69</p>
+                                <p class="text-muted text-decoration-line-through">S/70</p>
                             </div>
-                            <div>
-                                <div class="d-flex align-items-center">
-                                    <button class="btn btn-outline-secondary btn-sm">-</button>
-                                    <input type="text" class="form-control text-center mx-1" value="1" style="width: 50px;">
-                                    <button class="btn btn-outline-secondary btn-sm">+</button>
-                                </div>
+                            <div class="quantity-control">
+                                <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(this, -1)">-</button>
+                                <input type="text" class="form-control text-center mx-1" value="1" style="width: 50px;"
+                                    oninput="validateQuantity(this)">
+                                <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(this, 1)">+</button>
                             </div>
                         </div>
                         <!-- Copia para otros productos -->
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="me-3">
-                                <div class="bg-secondary rounded">
-                                    <img src="Img/producto.jpg" style="width: 80px; height: 80px;" alt="producto 1">
-                                </div>
-                            </div>
-                            <div class="flex-grow-1">
-                                <h5 class="text-black fw-bold">Producto</h5>
-                                <p class="text-muted mb-0">Lorem ipsum dolor sit amet consectetur.</p>
+                        <div class="product-item d-flex align-items-center">
+                            <img src="Img/producto.jpg" alt="Producto 2">
+                            <div class="flex-grow-1 px-3">
+                                <h5 class="fw-bold text-dark">Producto</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur.</p>
                             </div>
                             <div class="text-end me-3">
-                                <p class="text-black fw-bold mb-0">Precio Actual</p>
-                                <p class="text-muted text-decoration-line-through">Precio Anterior</p>
+                                <p class="fw-bold text-dark mb-0">S/69</p>
+                                <p class="text-muted text-decoration-line-through">S/70</p>
                             </div>
-                            <div>
-                                <div class="d-flex align-items-center">
-                                    <button class="btn btn-outline-secondary btn-sm">-</button>
-                                    <input type="text" class="form-control text-center mx-1" value="1" style="width: 50px;">
-                                    <button class="btn btn-outline-secondary btn-sm">+</button>
-                                </div>
+                            <div class="quantity-control">
+                                <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(this, -1)">-</button>
+                                <input type="text" class="form-control text-center mx-1" value="1" style="width: 50px;"
+                                    oninput="validateQuantity(this)">
+                                <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(this, 1)">+</button>
                             </div>
                         </div>
                     </div>
                 </div>
-    
+            
                 <!-- Resumen de Compra -->
                 <div class="col-12 col-md-4">
-                    <h1 class="text-black fw-bold text-center">Resumen</h1>
-                    <div class="card p-3 bg-light rounded">
+                    <h1 class="fw-bold text-center text-primary-emphasis mb-4">Resumen</h1>
+                    <div class="summary">
                         <div class="d-flex justify-content-between">
-                            <p class="mb-0">Productos (2)</p>
-                            <p class="mb-0">S/ 999</p>
+                            <p>Productos (2)</p>
+                            <p>S/ 999</p>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p class="mb-0">Descuentos (2)</p>
-                            <p class="mb-0 text-danger">- S/ 999</p>
+                            <p>Descuentos (2)</p>
+                            <p class="text-danger">- S/ 999</p>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between">
-                            <p class="fw-bold mb-0">Total:</p>
-                            <p class="fw-bold mb-0">S/ 0</p>
+                            <p class="fw-bold">Total:</p>
+                            <p class="fw-bold">S/ 0</p>
                         </div>
-                        <div class="mt-3">
-                            <button class="btn btn-secondary w-100">Continuar Compra</button>
-                        </div>
+                        <button class="btn btn-success w-100 mt-3">Continuar Compra</button>
                     </div>
                 </div>
             </div>
@@ -147,7 +137,7 @@
 
 
 
-    <footer class="bg-dark text-white py-2">
+    <footer class="background-footer text-white py-2">
         <div class="container">
             <!-- Fila de redes sociales -->
             <div class="row justify-content-center">
@@ -156,7 +146,7 @@
                 </div>
                 <div class="col-auto">
                     <a href="https://facebook.com" target="_blank" class="text-white">
-                        <i class="facebook fab fa-facebook-f"></i> <!-- Ícono de Facebook -->
+                        <i class="facebook fab fa-brands fa-facebook"></i> <!-- Ícono de Facebook -->
                     </a>
                 </div>
                 <div class="col-auto">
@@ -165,7 +155,7 @@
                     </a>
                 </div>
             </div>
-
+    
             <!-- Fila de Copyright -->
             <div class="row">
                 <div class="col text-center">
@@ -180,6 +170,6 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <!--Enlace de JavaScript - Validación-->
-    <script src=""></script>
+    <script src="js/shopping_Cart.js"></script>
 
 </body>
