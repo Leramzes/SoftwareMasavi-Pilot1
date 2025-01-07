@@ -71,12 +71,15 @@
                 <!-- Carrito de Compra -->
                 <div class="col-12 col-md-8 mb-4">
                     <h2 class="fw-bold text-primary-emphasis mb-4">Carrito de Compra:</h2>
-                    <div class="alert alert-warning d-flex flex-column " role="alert">
-                        <h5 class="fw-bold mb-3 text-primary-emphasis">Tu carrito está vacío</h5>
-                        <p class="mb-3">¡No te quedes sin explorar nuestras increíbles productos!</p>
-                        <form action="product" method="post">
-                            <button class="btn btn-primary" type="submit">¡Explora nuestros productos ahora!</button>
-                        </form>
+                    <div class="alert alert-warning d-flex align-items-center" role="alert">
+                        <div>
+                            <strong>¡Vaya!</strong> Tu carrito está vacío.
+                            <form action="product" method="post">
+                                <button class="btn btn-success mt-3" type="submit">
+                                    <i class="fa-solid fa-arrow-right me-2"></i> ¡Explora nuestros productos ahora!
+                                </button>
+                            </form>
+                        </div>
                     </div>
 
                     <div class="card">
