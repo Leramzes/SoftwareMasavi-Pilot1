@@ -52,7 +52,18 @@ html {
     /* Eliminar desbordamiento horizontal */
 }
 
-main {
-    overflow: hidden;
-    /* Evitar desbordamiento dentro de main */
+
+.transparente {
+    background: rgba(255, 255, 255, 0.45);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+/* Estilo para la línea divisora */
+.divider {
+    border: 0;
+    height: 5px;
+    background: #76ac00;
+    border-radius: 5px;
+    margin: 30px 0;
 }
