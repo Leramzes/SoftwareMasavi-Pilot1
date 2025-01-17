@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/background.css">
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
 </head>
 
 <body>
@@ -51,13 +54,27 @@
                             <a class="nav-link" href="contactanos.html">Contáctanos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shopping_cart.html"><i class="fa-solid fa-bag-shopping"></i>
-                                Carrito</a>
+                            <form action="cart" method="get" class="position-relative">
+                                <button class="nav-link" type="submit">
+                                    <i class="fa-solid fa-bag-shopping me-1"></i>
+                                    Carrito
+                                </button>
+                                <!-- Span para mostrar la cantidad de productos -->
+                                <span id="cart-count1" class="badge rounded-circle position-absolute top-0 start-100 translate-middle">0</span>
+                                <span id="cart-count" class="badge rounded-circle position-absolute top-0 start-100"
+                                style="background-color: red; color: white; font-size: 0.75rem;
+                                                                         width: 1.5rem; height: 1.5rem; display: flex;
+                                                                         justify-content: center; align-items: center;
+                                                                         border: 2px solid white;
+                                                                         transform: translate(-50%, -25%); visibility: hidden;">
+                                    0
+                                </span>
+                            </form>
                         </li>
                     </ul>
     
                     <!-- Botón de iniciar sesión alineado a la derecha -->
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-end ms-3">
                         <a href="login.html" class="btn rounded-pill border">Iniciar Sesión</a>
                     </div>
                 </div>
@@ -68,7 +85,7 @@
     <main class="bg-main">
         <div class="container py-4">
             <div class="row mb-3 text-center text-primary-emphasis">
-                <h2>Productos Destacados</h2>
+                <h2 class="highlighted-title"><i class="fas fa-star"></i>Productos Destacados<i class="fas fa-star"></i></h2>
             </div>
             <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
                 <!-- Indicators -->
@@ -92,7 +109,7 @@
                             <div class="col-auto text-center mx-5 carousel">
                                 <h1>Waifu</h1>
                                 <h3>Precio Actual: S/99.99</h3>
-                                <h5 class="tachado">Precio Anterior: S/100</h5>
+                                <h5>Precio Anterior: S/100</h5>
                                 <p>Lleve su Waifu a buen precio</p>
                                 <button type="button" class="btn btn-success w-100">
                                     Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i>
@@ -223,12 +240,13 @@
             
                         <!-- Copiar esta estructura para más productos -->
                         <div class="col">
-                            <div class="product-card product-item">
-                                <img src="Img/producto2.jpg" alt="Producto" class="product">
-                                <h2>Waifu</h2>
-                                <h4>Precio Actual: S/99.99</h4>
-                                <h5 class="tachado">Precio Anterior: S/100</h5>
-                                <p>Lleve su Waifu a buen precio</p>
+                            <div class="product-card d-flex flex-column justify-content-between align-items-center">
+                                <img src="Img/producto.jpg" alt="Producto">
+                                <div class="product-info">
+                                    <h2 class="product-title">Waifu</h2>
+                                    <h4 class="product-price">Precio Actual: S/99.99</h4>
+                                    <p class="product-description">Lleve su Waifu a buen precio</p>
+                                </div>
                                 <button type="button" class="btn btn-success w-100">
                                     Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
@@ -236,13 +254,14 @@
                         </div>
                         <!-- Más tarjetas -->
                         <div class="col">
-                            <div class="product-card product-item">
-                                <img src="https://via.placeholder.com/150" alt="Producto">
-                                <h2>Waifu</h2>
-                                <h4>Precio Actual: S/99.99</h4>
-                                <h5 class="tachado">Precio Anterior: S/100</h5>
-                                <p>Lleve su Waifu a buen precio</p>
-                                <button type="button" class="btn btn-success w-100">
+                            <div class="product-card d-flex flex-column justify-content-between align-items-center">
+                                <img src="Img/producto.jpg" alt="Producto">
+                                <div class="product-info">
+                                    <h2 class="product-title">Waifu</h2>
+                                    <h4 class="product-price">Precio Actual: S/99.99</h4>
+                                    <p class="product-description">Lleve su Waifu a buen precio</p>
+                                </div>
+                                <button type="button" " class="btn btn-success w-100 ">
                                     Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
                             </div>
@@ -253,6 +272,27 @@
         </div>
     </main>
 
+    <script>
+        // Simulación de agregar productos al carrito
+            let cartCount = 0;
+
+            // Función para actualizar el contador
+            function updateCartCount(count) {
+                const cartCountElement = document.getElementById('cart-count');
+                cartCountElement.textContent = count;
+                cartCountElement.style.visibility = count > 0 ? 'visible' : 'hidden';
+            }
+
+            // Ejemplo: Cada vez que se agrega un producto, incrementamos el contador
+            function addToCart() {
+                cartCount++;
+                updateCartCount(cartCount);
+            }
+
+            // Llama a esta función cuando un producto sea agregado
+            addToCart();
+            addToCart(); // Simulación: se agregaron dos productos
+    </script>
 
     <footer class="background-footer text-white py-2">
         <div class="container">
@@ -288,5 +328,7 @@
         crossorigin="anonymous"></script>
     <!--Enlace de JavaScript - Validación-->
     <script src="js/product.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
